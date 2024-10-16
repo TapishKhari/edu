@@ -1,0 +1,14 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top:5%;
+}
+.a-bod{
+    width:50%;
+    
+}
+.b-bod{
+    width: 50%;
+    
+}
