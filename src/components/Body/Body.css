@@ -1,14 +1,35 @@
-.body{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top:5%;
-}
-.a-bod{
-    width:50%;
-    
-}
-.b-bod{
-    width: 50%;
-    
-}
+
+
+@media screen and (min-width: 760px) {
+    .body{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top:5%;
+    }
+    .a-bod{
+        width:50%;
+        
+    }
+    .b-bod{
+        width: 50%;
+        
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    .body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top:5%;
+    }
+    .a-bod{
+        width:100%;
+        
+    }
+    .b-bod{
+        width: 100%;
+        
+    }
+  }
