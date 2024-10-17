@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Registration.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom'; 
 
 export const Registration = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export const Registration = () => {
   });
 
   const [phoneError, setPhoneError] = useState(''); // State to store phone error
+  const navigate = useNavigate(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +44,7 @@ export const Registration = () => {
       const response = await axios.post('http://localhost:3030/register', formData);
       console.log('Response:', response.data);
       alert('Registration Successful!');
+      navigate('/success'); 
     } catch (error) {
       console.error('Error:', error);
       alert('Registration Failed!');
