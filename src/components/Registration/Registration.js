@@ -10,11 +10,17 @@ export const Registration = () => {
     phone: '',
     location: '',
     experience: '',
-    batchNo: 'Batch 1',  // Batch No field
+    batchNo: '1',  // Batch No field (default, non-editable)
   });
+
+  const [phoneError, setPhoneError] = useState(''); // State to store phone error
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    // Validate phone input length
+    if (name === 'phone' && value.length > 10) return; // Restrict to 10 digits
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -23,6 +29,15 @@ export const Registration = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if phone number is exactly 10 digits
+    if (formData.phone.length !== 10) {
+      setPhoneError('Phone number must be exactly 10 digits.');
+      return;
+    } else {
+      setPhoneError('');
+    }
+
     try {
       const response = await axios.post('http://localhost:3030/register', formData);
       console.log('Response:', response.data);
@@ -35,7 +50,7 @@ export const Registration = () => {
 
   return (
     <div className="form-container">
-      <h3 className="form-title">Registration Form</h3>
+      <h2 className="form-title">Registration Form</h2>
       <form onSubmit={handleSubmit} className="form">
         <input
           type="text"
@@ -61,6 +76,7 @@ export const Registration = () => {
           onChange={handleChange}
           className="form-input"
         />
+        {phoneError && <p className="error-message">{phoneError}</p>}
         <input
           type="text"
           name="location"
@@ -82,10 +98,10 @@ export const Registration = () => {
           name="batchNo"
           placeholder="Batch No"
           value={formData.batchNo}
-          readOnly // Makes the field non-editable
-          className="form-input form-input-readonly" 
+          readOnly
+          className="form-input form-input-readonly"
         />
-        <button type="submit" className="form-button">Click here to Register</button>
+        <button type="submit" className="form-button">Register</button>
       </form>
     </div>
   );
