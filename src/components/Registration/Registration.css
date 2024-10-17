@@ -1,68 +1,70 @@
-/* RegistrationForm.css */
+/* Registration.css */
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-  }
-  
-  .form-container {
-    /* outline: 2px solid white; */
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-  }
-  
-  .form-title {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  .form-input {
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #fff;
-    background-color: #000;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  .form-input::placeholder {
-    color: #aaa; /* Light grey placeholder */
-  }
-  
-  .form-input:focus {
-    outline: none;
-    border-color: #fff;
-  }
-  
-  .form-button {
-    padding: 10px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .form-button:hover {
-    background-color: black;
-    color: white;
-    
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+.form-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.form-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.form-input::placeholder {
+  color: #aaa; /* Light grey placeholder */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #fff;
+}
+
+.form-button {
+  padding: 10px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color:black;
+  color: whitesmoke;
+}
+
+.form-input-readonly {
+  background-color: #333;
+  cursor: not-allowed;
+}

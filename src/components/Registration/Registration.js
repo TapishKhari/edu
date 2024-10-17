@@ -1,4 +1,4 @@
-// RegistrationForm.js
+// Registration.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Registration.css'; // Import the CSS file
@@ -10,6 +10,7 @@ export const Registration = () => {
     phone: '',
     location: '',
     experience: '',
+    batchNo: 'Batch 1',  // Batch No field
   });
 
   const handleChange = (e) => {
@@ -76,10 +77,18 @@ export const Registration = () => {
           onChange={handleChange}
           className="form-input"
         />
+        <input
+          type="text"
+          name="batchNo"
+          placeholder="Batch No"
+          value={formData.batchNo}
+          readOnly // Makes the field non-editable
+          className="form-input form-input-readonly" 
+        />
         <button type="submit" className="form-button">Click here to Register</button>
       </form>
     </div>
   );
 };
 
-export default Registration;
+
